@@ -22,7 +22,7 @@ jobs:
       - name: Log into registry
         uses: azure/docker-login@v1
         with:
-          registry: ${{ secrets.ACR_ENDPOINT }}
+          login-server: ${{ secrets.ACR_ENDPOINT }}
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
 
