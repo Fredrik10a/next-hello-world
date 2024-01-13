@@ -23,8 +23,7 @@ jobs:
         uses: azure/docker-login@v1
         with:
           login-server: acr0dev.azurecr.io
-          username: ${{ secrets.ACR_USERNAME }}
-          password: ${{ secrets.ACR_PASSWORD }}
+          identity: 'managed'  # Use 'managed' to indicate that you're using a managed identity    
 
       - name: Push Docker image to ACR
         run: |
