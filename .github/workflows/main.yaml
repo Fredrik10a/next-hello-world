@@ -23,8 +23,10 @@ jobs:
         uses: azure/docker-login@v1
         with:
           login-server: acr0dev.azurecr.io
-          username: ${{ secrets.ACR_USERNAME }}
-          password: ${{ secrets.ACR_PASSWORD }}
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+      
 
       - name: Push Docker image to ACR
         run: |
