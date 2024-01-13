@@ -19,7 +19,7 @@ jobs:
       - name: Get current date
         run: echo "CURRENT_DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
 
-      - name: Log into registry
+      - name: Login to Azure Container Registry
         uses: azure/docker-login@v1
         with:
           login-server: ${{ secrets.ACR_ENDPOINT }}
